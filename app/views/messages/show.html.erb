@@ -3,6 +3,9 @@
 		<div class="col-sm-12">
 			<h2><%= @message.title %></h2>
 			<p>
+				Posted by <%= @message.user.email %>
+			</p>
+			<p>
 				<%= @message.description %>
 			</p>
 			<h3>Comments:</h3>
