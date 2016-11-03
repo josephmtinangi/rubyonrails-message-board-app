@@ -5,6 +5,8 @@
 			<p>
 				<%= @message.description %>
 			</p>
+			<h3>Reply to Message</h3>
+			<%= render "comments/form" %>
 			<p>
 				<%= link_to "Back", root_path %> | 
 				<%= link_to "Edit", edit_message_path(@message) %> | 
