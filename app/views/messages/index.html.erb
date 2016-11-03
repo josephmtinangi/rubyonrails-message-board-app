@@ -3,18 +3,24 @@
 		<div class="col-sm-12">
 			<h2>Messages</h2>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
-			<%= link_to "New Message", new_message_path, class: "btn btn-primary" %>
-		</div>
 	</div>	
 	<div class="row">
 		<div class="col-sm-12">
-			<% @messages.each do |message| %>
-				<h2><%= message.title %></h2>
-				<%= link_to "View message", message_path(message), class: "btn btn-info" %>
-			<% end %>
+			<div class="row">
+				<% @messages.each do |message| %>
+					<div class="col-md-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h2><%= message.title %></h2>
+								<%= link_to "Read message", message_path(message), class: "btn btn-link" %>	
+							</div>
+							<div class="panel-footer">
+								Posted by <em><%= message.user.email %></em> <em><%= time_ago_in_words(message.created_at) %></em> ago
+							</div>
+						</div>					
+					</div>
+				<% end %>				
+			</div>
 		</div>
 	</div>
 </div>
