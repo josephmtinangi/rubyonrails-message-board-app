@@ -1,5 +1,13 @@
-<h1>Edit comment</h1>
-<%= simple_form_for([@message, @comment]) do |f| %>
-	<%= f.input :content, label: "Comment" %>
-	<%= f.button :submit %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>Edit comment</h1>
+			<div class="well">
+				<%= simple_form_for([@message, @comment]) do |f| %>
+					<%= f.input :content, label: "Content", input_html: { rows: '5' } %>
+					<%= f.button :submit, class: 'btn btn-success' %>
+				<% end %>	
+			</div>			
+		</div>
+	</div>
+</div>
