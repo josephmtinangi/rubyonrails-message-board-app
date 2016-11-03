@@ -1,6 +1,6 @@
 <blockquote>
   <p><%= comment.content %></p>
-  <footer><%= comment.user.email %> <cite title="Source Title">Source Title</cite></footer>
+  <footer><%= comment.user.email %> <cite title="Source Title"><%= time_ago_in_words(comment.created_at) %></cite> ago</footer>
 </blockquote>
 
 <%= link_to "Edit", edit_message_comment_path(comment.message, comment) %> | 
